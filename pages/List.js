@@ -1,14 +1,20 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
+import {Text} from 'react-native';
+import Container from '../components/Container';
+import Contents from '../components/Contents';
+import Button from '../components/Button';
 
-function List( navigation ){
+function List( {navigation} ){
 
     return(
-        <View>
-            <Text>List</Text>
-            <Button title="디테일페이지로" 
-            onPress={() => navigation.navigate("Detail")}></Button>
-        </View>
+        <Container>
+            <Contents>
+                <Text>목록표시</Text>
+            </Contents>
+            <Button onPress={()=>navigation.navigate('Form')}>
+                새 일기 작성
+            </Button>
+        </Container>
     )
 }
 

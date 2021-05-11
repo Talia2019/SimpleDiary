@@ -1,11 +1,17 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Button, Text, View} from 'react-native';
+import Container from '../components/Container';
 
-function Detail(){
+function Detail({navigation}){
     return(
-        <View>
+        <Container>
             <Text>View</Text>
-        </View>
+            <Button
+                title="목록으로"
+                //onPress={()=>navigation.navigate("List")}
+                onPress={()=>navigation.goBack()}
+            ></Button>
+        </Container>
     )
 }
 
