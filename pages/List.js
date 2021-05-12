@@ -4,6 +4,7 @@ import Contents from '../components/Contents';
 import Button from '../components/Button';
 import styled from 'styled-components';
 import AsyncStorage from '@react-native-community/async-storage';
+import _ from 'lodash';
 
 const ListItem = styled.TouchableOpacity`
     width: 100%;
@@ -35,10 +36,11 @@ function List( {navigation} ){
     return(
         <Container>
             <Contents>
-                {list.map(item=>{
+                { _.sortBy(list, 'date').map(item=>{
                     return(
                         <ListItem key={item.date}
-                            onPress={ ()=>navigation.navigate('Detail') }>
+                        //날짜를 Detail의 route의 params로 보내기
+                            onPress={ ()=>navigation.navigate('Detail', {date: item.date}) }>
                             <Label>{item.date}</Label>
                         </ListItem>
                     )
