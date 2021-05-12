@@ -1,16 +1,19 @@
 import React from 'react';
-import {Button, Text, View} from 'react-native';
 import Container from '../components/Container';
+import Contents from '../components/Contents';
+import styled from 'styled-components';
+
+const Text = styled.Text`
+    font-size: 20px;
+    line-height: 20px;
+`;
 
 function Detail({navigation}){
     return(
         <Container>
-            <Text>View</Text>
-            <Button
-                title="목록으로"
-                //onPress={()=>navigation.navigate("List")}
-                onPress={()=>navigation.goBack()}
-            ></Button>
+            <Contents>
+                <Text>{'hello'}</Text>
+            </Contents>
         </Container>
     )
 }
